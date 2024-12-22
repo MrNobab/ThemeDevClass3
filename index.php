@@ -2,6 +2,38 @@
  get_header();
 ?>
 
+
+<?php
+
+echo 'Hi';
+
+$serviceArguments = array(
+  'post_type' => 'services',
+  'post_per_page' => '-1'
+);
+
+$service_query = new WP_Query($serviceArguments);
+
+
+  while($service_query -> have_posts()){
+
+    $service_query -> the_post();
+    
+    the_title( );
+    the_content( );
+  
+}
+
+
+
+
+?>
+
+
+
+
+
+
     <section class="slider_section position-relative">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
